@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my-app/static/css/main.a1a0c0da.css",
-    "main.js": "/my-app/static/js/main.e779187f.js",
+    "main.js": "/my-app/static/js/main.be0ac00b.js",
     "static/css/871.5491738d.chunk.css": "/my-app/static/css/871.5491738d.chunk.css",
     "static/js/871.39f42b20.chunk.js": "/my-app/static/js/871.39f42b20.chunk.js",
     "static/css/337.5491738d.chunk.css": "/my-app/static/css/337.5491738d.chunk.css",
@@ -32,7 +32,7 @@
     "static/media/instagram-logo.png": "/my-app/static/media/instagram-logo.75e0546a6b5abe4c0506.png",
     "index.html": "/my-app/index.html",
     "main.a1a0c0da.css.map": "/my-app/static/css/main.a1a0c0da.css.map",
-    "main.e779187f.js.map": "/my-app/static/js/main.e779187f.js.map",
+    "main.be0ac00b.js.map": "/my-app/static/js/main.be0ac00b.js.map",
     "871.5491738d.chunk.css.map": "/my-app/static/css/871.5491738d.chunk.css.map",
     "871.39f42b20.chunk.js.map": "/my-app/static/js/871.39f42b20.chunk.js.map",
     "337.5491738d.chunk.css.map": "/my-app/static/css/337.5491738d.chunk.css.map",
@@ -40,6 +40,6 @@
   },
   "entrypoints": [
     "static/css/main.a1a0c0da.css",
-    "static/js/main.e779187f.js"
+    "static/js/main.be0ac00b.js"
   ]
 }
