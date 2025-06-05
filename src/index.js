@@ -5,10 +5,11 @@ import ReactGA from 'react-ga4';
 import App from './App';
 import './styles/global.css';
 import './styles/animations.css';
-
+import { BrowserRouter } from 'react-router-dom';
 // Inisialisasi Google Analytics
 ReactGA.initialize('G-XXXXXXXXXX'); // Ganti dengan Tracking ID Anda
 ReactGA.send('pageview');
+
 
 // Inisialisasi Hotjar (opsional, hapus jika tidak digunakan)
 const HOTJAR_ID = 'YOUR_HOTJAR_ID'; // Ganti dengan ID Hotjar Anda

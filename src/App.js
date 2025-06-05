@@ -23,6 +23,7 @@ import Certification from './components/Certification/Certification';
 import Team from './components/Team/Team';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
 // ========== LAZY LOAD COMPONENTS ==========
 const Blog = lazy(() => import('./components/Blog/Blog'));
@@ -82,7 +83,13 @@ const App = () => {
       }
     }
   };
-
+function App() {
+  return (
+    <BrowserRouter basename="/my-app">
+      {/* Komponen seperti menu katering */}
+    </BrowserRouter>
+  );
+}
   // ========== TOGGLE MOBILE MENU ==========
   const toggleMenu = () => {
     console.log('Toggling menu, current state:', menuTerbuka);
