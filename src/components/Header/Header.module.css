@@ -1,0 +1,608 @@
+/* Header styling with Indonesian-inspired elements */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  height: 70px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand styling */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+}
+
+.brand:hover {
+  transform: translateY(-2px);
+}
+
+.brand:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.logoContainer {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #22c55e;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brand:hover .logo {
+  transform: scale(1.05);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.brandSubtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navigation styling */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #22c55e;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.navLink:hover {
+  color: #22c55e;
+}
+
+.navLink:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navLink.active {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.navLink.active::after {
+  transform: scaleX(1);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* Actions styling */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  background: #22c55e;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.ctaButton:hover {
+  background: #16a34a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+}
+
+.ctaButton:hover::before {
+  transform: translateX(100%);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+.whatsappIcon {
+  font-size: 18px;
+}
+
+/* Menu toggle button */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  gap: 6px;
+  position: relative;
+  z-index: 1002;
+}
+
+.menuToggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+.menuToggle span {
+  width: 24px;
+  height: 2px;
+  background: #374151;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.menuToggle:hover span {
+  background: #22c55e;
+}
+
+.menuToggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menuToggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile menu styling - FIXED */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.mobileMenu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobileMenuOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+.mobileMenuContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mobileMenu.open .mobileMenuContent {
+  transform: translateX(0);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: #f9fafb;
+  min-height: 80px;
+}
+
+.mobileBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobileLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #22c55e;
+}
+
+.mobileBrand span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: #374151;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background: #22c55e;
+  color: white;
+  transform: rotate(90deg);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+.mobileNavigation {
+  flex: 1;
+  padding: 20px 0;
+  overflow-y: auto;
+}
+
+.mobileNavigation .navItem {
+  width: 100%;
+}
+
+.mobileNavigation .navLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0;
+  border-left: 3px solid transparent;
+  text-align: left;
+  background: transparent;
+  color: #374151;
+}
+
+.mobileNavigation .navLink::after {
+  display: none;
+}
+
+.mobileNavigation .navLink:hover {
+  background: rgba(34, 197, 94, 0.05);
+  color: #22c55e;
+}
+
+.mobileNavigation .navLink.active {
+  background: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid #22c55e;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.mobileNavigation .navLink svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+  opacity: 0.5;
+}
+
+.mobileNavigation .navLink:hover svg {
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+.mobileMenuFooter {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.mobileCtaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 50px;
+  background: #22c55e;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileCtaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.mobileCtaButton:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(34, 197, 94, 0.3);
+}
+
+.mobileCtaButton:hover::before {
+  transform: translateX(100%);
+}
+
+.mobileCtaButton:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #374151;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  color: white;
+  background: #22c55e;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(34, 197, 94, 0.2);
+}
+
+.socialLinks a:focus-visible {
+  outline: 2px solid #22c55e;
+  outline-offset: 2px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .brandName {
+    font-size: 22px;
+  }
+  
+  .brandSubtitle {
+    font-size: 11px;
+  }
+  
+  .navLink {
+    padding: 0 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .menuToggle {
+    display: flex;
+  }
+  
+  .logoContainer {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .brandName {
+    font-size: 20px;
+  }
+  
+  .brandSubtitle {
+    font-size: 10px;
+  }
+  
+  .ctaButton {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .ctaButton span {
+    display: none;
+  }
+  
+  .ctaButton {
+    width: 40px;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .whatsappIcon {
+    margin: 0;
+  }
+  
+  .actions {
+    gap: 8px;
+  }
+  
+  .mobileMenuContent {
+    width: calc(100vw - 40px);
+    max-width: 320px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

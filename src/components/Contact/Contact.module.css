@@ -1,0 +1,683 @@
+/* Import Nunito Font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Contact Section - Modern Professional Design */
+.contactSection {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f8fffe 0%, #ffffff 50%, #f0f9f0 100%);
+  padding: 80px 0 0 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative Lines Accent */
+.decorativeLines {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorativeLinesBottom {
+  position: absolute;
+  bottom: 40px;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.1), transparent);
+  height: 1px;
+  width: 100%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.decorativeLines .line:nth-child(1) {
+  top: 0;
+  animation-delay: 0s;
+}
+
+.decorativeLines .line:nth-child(2) {
+  top: 25px;
+  animation-delay: 1s;
+}
+
+.decorativeLines .line:nth-child(3) {
+  top: 50px;
+  animation-delay: 2s;
+}
+
+.decorativeLinesBottom .line:nth-child(1) {
+  bottom: 0;
+  animation-delay: 0.5s;
+}
+
+.decorativeLinesBottom .line:nth-child(2) {
+  bottom: 25px;
+  animation-delay: 1.5s;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* Hero Section */
+.heroSection {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #1f2937 0%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.heroSubtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: #6b7280;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.heroAccent {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+  margin: 0 auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.heroAccent::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* Content Grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Contact Cards */
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.08),
+    0 5px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.12),
+    0 10px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.iconWrapper {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.25);
+}
+
+.iconWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+  border-radius: 14px;
+}
+
+.cardIcon {
+  color: white;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.cardTitle h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.cardSubtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.cardDescription {
+  font-family: 'Nunito', sans-serif;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+/* Buttons */
+.whatsappButton {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #25D366 0%, #1ea952 100%);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+}
+
+.whatsappButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+}
+
+.buttonShine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.whatsappButton:hover .buttonShine {
+  left: 100%;
+}
+
+/* Location Details */
+.locationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.locationItem {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.locationItem svg {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Map Section */
+.mapSection {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.mapHeader {
+  margin-bottom: 20px;
+}
+
+.mapHeader h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.mapHeader p {
+  font-family: 'Nunito', sans-serif;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.mapContainer {
+  position: relative;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 30px -5px rgba(0, 0, 0, 0.1),
+    0 8px 15px -5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mapContainer:hover {
+  transform: scale(1.01);
+}
+
+.mapLoader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  color: #6b7280;
+  gap: 16px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.loaderSpinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #22c55e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mapButton {
+  font-family: 'Nunito', sans-serif;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: #1f2937;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mapButton:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* CTA Section */
+.ctaSection {
+  margin-top: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+  padding: 50px 32px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(34, 197, 94, 0.04) 0%, transparent 50%);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaContent h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.ctaContent p {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #d1d5db;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+}
+
+.secondaryCta {
+  font-family: 'Nunito', sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 1024px) {
+  .contactSection {
+    padding: 60px 0 0 0;
+  }
+  
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .mapSection {
+    position: static;
+    top: auto;
+  }
+  
+  .heroSection {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 50px 0 0 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .heroSection {
+    margin-bottom: 25px;
+  }
+  
+  .contactCard {
+    padding: 24px;
+  }
+  
+  .mapContainer {
+    height: 280px;
+  }
+  
+  .ctaSection {
+    padding: 40px 24px;
+    margin-top: 30px;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactSection {
+    padding: 40px 0 0 0;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .heroSection {
+    margin-bottom: 20px;
+  }
+  
+  .contactCards {
+    gap: 16px;
+  }
+  
+  .contactCard {
+    padding: 20px;
+  }
+  
+  .iconWrapper {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .cardIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .whatsappButton {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .mapContainer {
+    height: 260px;
+    border-radius: 16px;
+  }
+  
+  .mapButton {
+    bottom: 12px;
+    right: 12px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .ctaSection {
+    padding: 32px 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 30px 0 0 0;
+  }
+  
+  .heroAccent {
+    width: 80px;
+    height: 3px;
+  }
+  
+  .heroAccent::after {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .cardHeader {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+  
+  .locationItem {
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+  
+  .mapContainer {
+    height: 240px;
+  }
+  
+  .decorativeLines,
+  .decorativeLinesBottom {
+    display: none;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .line {
+    animation: none;
+  }
+}
+
+/* Font loading optimization */
+@media (max-width: 768px) {
+  .contactSection {
+    font-display: swap;
+  }
+}

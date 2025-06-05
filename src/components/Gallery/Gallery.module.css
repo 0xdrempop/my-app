@@ -1,0 +1,483 @@
+/* Gallery.module.css - Optimized with Nunito Font */
+
+/* SECTION UTAMA - Tanpa gap untuk seamless transition */
+.gallery {
+  padding: 0;
+  color: #1A1A1A;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  position: relative;
+}
+
+/* HEADER STYLES */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.headerContent {
+  position: relative;
+  display: inline-block;
+}
+
+.label {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4A7C59;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.accentLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2D5016, #4A7C59);
+  margin: 8px auto 24px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.accentLine::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -8px;
+  width: 12px;
+  height: 7px;
+  background: #4A7C59;
+  border-radius: 50%;
+}
+
+.accentLine::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  width: 12px;
+  height: 7px;
+  background: #2D5016;
+  border-radius: 50%;
+}
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1A1A1A;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  position: relative;
+}
+
+.titleUnderline {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4A7C59, transparent);
+  margin: 16px auto 24px;
+  position: relative;
+}
+
+.subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  color: #666666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* FILTER NAVIGATION */
+.filterNav {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.filterContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterList {
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filterButton {
+  position: relative;
+  border: 2px solid #2D5016;
+  color: #2D5016;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  overflow: hidden;
+}
+
+.filterButton:hover {
+  background: #2D5016;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 80, 22, 0.25);
+}
+
+.filterButton.active {
+  background: #2D5016;
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+}
+
+.buttonLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4A7C59;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.filterButton:hover .buttonLine,
+.filterButton.active .buttonLine {
+  transform: scaleX(1);
+}
+
+.filterButton:focus {
+  outline: 2px solid #4A7C59;
+  outline-offset: 4px;
+}
+
+/* GRID CONTAINER */
+.gridContainer {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background: #FFFFFF;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.6s ease-out both;
+  animation-delay: var(--delay);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(1.05) contrast(1.1);
+}
+
+.item:hover .image {
+  transform: scale(1.1);
+}
+
+/* OVERLAY STYLES */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.85) 0%,
+    rgba(45, 80, 22, 0.8) 50%,
+    rgba(26, 26, 26, 0.9) 100%
+  );
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  position: relative;
+  z-index: 2;
+}
+
+.category {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #1A1A1A;
+  background: linear-gradient(135deg, #FFFFFF, #f8f8f8);
+  padding: 8px 20px;
+  border-radius: 25px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+}
+
+.item:hover .category {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.caption {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease 0.2s;
+}
+
+.item:hover .caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease 0.3s;
+}
+
+.item:hover .meta {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.date,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.date svg,
+.location svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* LOAD MORE SECTION */
+.loadMoreContainer {
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+.loadMore {
+  position: relative;
+  background: #2D5016;
+  color: #FFFFFF;
+  padding: 18px 48px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+  overflow: hidden;
+}
+
+.loadMore:hover {
+  background: #4A7C59;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(45, 80, 22, 0.3);
+}
+
+.buttonHoverLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.loadMore:hover .buttonHoverLine {
+  transform: scaleX(1);
+}
+
+.loadMore:focus {
+  outline: 2px solid #4A7C59;
+  outline-offset: 4px;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .label {
+    font-size: 1rem;
+  }
+  
+  .filterList {
+    gap: 6px;
+  }
+  
+  .filterButton {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .imageContainer {
+    height: 260px;
+  }
+  
+  .overlay {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+  }
+  
+  .title {
+    font-size: 1.9rem;
+  }
+  
+  .label {
+    font-size: 0.95rem;
+  }
+  
+  .filterButton {
+    padding: 10px 18px;
+    font-size: 0.8rem;
+  }
+  
+  .imageContainer {
+    height: 220px;
+  }
+  
+  .caption {
+    font-size: 1.2rem;
+  }
+  
+  .loadMore {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+}

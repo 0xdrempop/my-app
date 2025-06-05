@@ -1,0 +1,860 @@
+/* Professional Kitchen Section - SEO & Mobile Optimized */
+.kitchen {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border: 0;
+  /* Remove gaps between sections */
+  margin-bottom: 0 !important;
+}
+
+.kitchenContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 80px 20px;
+  position: relative;
+  background: #ffffff;
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background: #ffffff;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f0f5f0;
+  border-top: 3px solid #2d5a27;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Header Section */
+.kitchenHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  background: #ffffff;
+}
+
+.headerAccent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 25px;
+  position: relative;
+}
+
+.accentLine {
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #2d5a27 0%, #4a7c59 50%, #2d5a27 100%);
+  display: block;
+  position: relative;
+}
+
+.accentLine:nth-child(2) {
+  width: 50px;
+  height: 3px;
+}
+
+.accentLine:nth-child(1),
+.accentLine:nth-child(3) {
+  opacity: 0.7;
+}
+
+.labelBackground {
+  background: linear-gradient(135deg, #f8fdf8 0%, #ffffff 50%, #f8fdf8 100%);
+  border: 1px solid #e8f3e8;
+  border-radius: 25px;
+  padding: 12px 30px;
+  display: inline-block;
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(45, 90, 39, 0.1);
+}
+
+.labelBackground::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, #2d5a27, #4a7c59, #2d5a27);
+  border-radius: 25px;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.kitchenLabel {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2d5a27;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  display: block;
+  margin: 0;
+  position: relative;
+}
+
+.kitchenTitle {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.titleUnderline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 25px auto 0;
+  position: relative;
+}
+
+.underlineDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2d5a27;
+  display: block;
+  animation: pulse 2s infinite;
+}
+
+.underlineDot:nth-child(2) {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(45deg, #2d5a27, #4a7c59);
+  animation-delay: 0.2s;
+}
+
+.underlineDot:nth-child(1),
+.underlineDot:nth-child(3) {
+  opacity: 0.7;
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Carousel Section */
+.carouselSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  align-items: start;
+  background: #ffffff;
+}
+
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kitchenCarousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f8fdf8;
+  border-radius: 16px;
+  border: 2px solid #e8f3e8;
+  box-shadow: 
+    0 12px 40px rgba(45, 90, 39, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(45, 90, 39, 0.05);
+  /* Mobile performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.kitchenCarousel:focus {
+  outline: 3px solid #2d5a27;
+  outline-offset: 4px;
+}
+
+.carouselItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Mobile performance optimizations */
+  will-change: opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.carouselItem.active {
+  opacity: 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.05) saturate(1.1) brightness(1.02);
+  border-radius: 14px;
+  /* Mobile performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 26, 26, 0.4) 40%,
+    rgba(26, 26, 26, 0.8) 80%,
+    rgba(26, 26, 26, 0.95) 100%
+  );
+  padding: 35px;
+  color: white;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.overlayContent {
+  position: relative;
+}
+
+.imageTitle {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.chefInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chefBadge {
+  background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.3);
+}
+
+.badgeIcon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: block;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; box-shadow: 0 0 4px rgba(255, 255, 255, 0.5); }
+}
+
+/* Navigation */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(45, 90, 39, 0.2);
+  border-radius: 50%;
+  color: #2d5a27;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Mobile optimizations */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.navIcon {
+  display: block;
+  line-height: 1;
+}
+
+.navButton:hover,
+.navButton:focus {
+  background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(45, 90, 39, 0.4);
+  outline: 3px solid #2d5a27;
+  outline-offset: 3px;
+}
+
+.navPrev {
+  left: 20px;
+}
+
+.navNext {
+  right: 20px;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.progressDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(45, 90, 39, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  /* Mobile optimizations */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressDot::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(45, 90, 39, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+}
+
+.progressDot.active::before {
+  background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+  transform: scale(1.4);
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.4);
+}
+
+.progressDot:focus {
+  outline: 2px solid #2d5a27;
+  outline-offset: 4px;
+}
+
+/* Kitchen Info */
+.kitchenInfo {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  position: relative;
+}
+
+.description p {
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #3a3a3a;
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.featureTag {
+  background: linear-gradient(135deg, #f8fdf8 0%, #ffffff 100%);
+  color: #2d5a27;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  border: 2px solid rgba(45, 90, 39, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.1);
+}
+
+.featureIcon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2d5a27;
+  display: block;
+}
+
+.featureTag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(45, 90, 39, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.featureTag:hover {
+  background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(45, 90, 39, 0.3);
+  border-color: #2d5a27;
+}
+
+.featureTag:hover .featureIcon {
+  background: white;
+}
+
+.featureTag:hover::before {
+  left: 100%;
+}
+
+.decorativeLines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.decorativeLine {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #2d5a27 50%, transparent 100%);
+  display: block;
+}
+
+.decorativeLine:nth-child(1) { width: 30px; opacity: 0.5; }
+.decorativeLine:nth-child(2) { width: 60px; opacity: 0.8; }
+.decorativeLine:nth-child(3) { width: 30px; opacity: 0.5; }
+
+/* Remove gaps between sections */
+.kitchenContainer::after {
+  display: none;
+}
+
+/* Mobile First Responsive Design */
+@media (max-width: 992px) {
+  .kitchenContainer {
+    padding: 40px 20px 60px 20px;
+  }
+  
+  .kitchenTitle {
+    font-size: 2.4rem;
+  }
+  
+  .kitchenCarousel {
+    aspect-ratio: 16 / 11;
+  }
+  
+  .imageOverlay {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kitchenContainer {
+    padding: 30px 16px 50px 16px;
+  }
+  
+  .kitchenTitle {
+    font-size: 2.1rem;
+  }
+  
+  .kitchenCarousel {
+    aspect-ratio: 4 / 3;
+  }
+  
+  .imageOverlay {
+    padding: 25px;
+  }
+  
+  .imageTitle {
+    font-size: 1.5rem;
+  }
+  
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .navPrev {
+    left: 15px;
+  }
+  
+  .navNext {
+    right: 15px;
+  }
+  
+  .description p {
+    font-size: 1.05rem;
+  }
+  
+  .featureTag {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .kitchenContainer {
+    padding: 25px 16px 40px 16px;
+  }
+  
+  .kitchenHeader {
+    margin-bottom: 40px;
+  }
+  
+  .kitchenTitle {
+    font-size: 1.9rem;
+  }
+  
+  .carouselSection {
+    gap: 35px;
+  }
+  
+  .kitchenCarousel {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+  
+  .image {
+    border-radius: 10px;
+  }
+  
+  .imageOverlay {
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .imageTitle {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .chefBadge {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .navPrev {
+    left: 10px;
+  }
+  
+  .navNext {
+    right: 10px;
+  }
+  
+  .progressDot::before {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .description p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .featureTag {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .labelBackground {
+    padding: 10px 24px;
+  }
+  
+  .kitchenLabel {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+  
+  .accentLine {
+    width: 25px;
+  }
+  
+  .accentLine:nth-child(2) {
+    width: 40px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .kitchenContainer {
+    padding: 20px 12px 35px 12px;
+  }
+  
+  .kitchenTitle {
+    font-size: 1.7rem;
+  }
+  
+  .imageOverlay {
+    padding: 15px;
+  }
+  
+  .imageTitle {
+    font-size: 1.2rem;
+  }
+  
+  .chefBadge {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .featureTag {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .description p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .carouselItem {
+    transition: opacity 0.4s ease;
+  }
+  
+  .navButton:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .featureTag:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Disable animations on very small screens for performance */
+  @media (max-width: 400px) {
+    .pulse,
+    .glow,
+    .badgeIcon {
+      animation: none;
+    }
+    
+    .underlineDot {
+      animation: none;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .kitchen {
+    background: #ffffff;
+  }
+  
+  .kitchenTitle {
+    color: #000000;
+  }
+  
+  .labelBackground {
+    border-width: 3px;
+    border-color: #2d5a27;
+  }
+  
+  .featureTag {
+    border-width: 3px;
+  }
+  
+  .navButton {
+    border-width: 3px;
+  }
+  
+  .progressDot:focus {
+    outline-width: 4px;
+  }
+  
+  .kitchenCarousel:focus {
+    outline-width: 4px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .carouselItem {
+    transition: opacity 0.3s ease;
+  }
+  
+  .navButton {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navButton:hover {
+    transform: translateY(-50%);
+  }
+  
+  .featureTag {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .featureTag:hover {
+    transform: none;
+  }
+  
+  .featureTag::before {
+    transition: none;
+  }
+  
+  .progressDot::before {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Disable all animations */
+  .pulse,
+  .glow,
+  .spin {
+    animation: none;
+  }
+  
+  .underlineDot,
+  .badgeIcon {
+    animation: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .kitchen {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .navButton,
+  .progressBar {
+    display: none !important;
+  }
+  
+  .carouselItem {
+    opacity: 1 !important;
+    position: relative !important;
+    page-break-inside: avoid;
+  }
+  
+  .kitchenCarousel {
+    height: auto !important;
+    aspect-ratio: unset !important;
+  }
+  
+  .imageOverlay {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: black !important;
+  }
+}
+
+/* Dark mode support - maintaining white background as requested */
+@media (prefers-color-scheme: dark) {
+  .kitchen {
+    background: #ffffff;
+  }
+  
+  .kitchenContainer {
+    background: #ffffff;
+  }
+  
+  .kitchenTitle {
+    color: #1a1a1a;
+  }
+  
+  .description p {
+    color: #3a3a3a;
+  }
+  
+  .carouselSection {
+    background: #ffffff;
+  }
+  
+  .kitchenInfo {
+    background: #ffffff;
+  }
+}
+
+/* Focus management for accessibility */
+.kitchen *:focus {
+  outline-offset: 2px;
+}
+
+/* Ensure smooth scrolling */
+.kitchen {
+  scroll-behavior: smooth;
+}
+
+/* Optimize images for different pixel densities */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

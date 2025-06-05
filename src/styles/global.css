@@ -1,0 +1,162 @@
+/* src/styles/global.css - Versi Bersih Tanpa Background */
+
+/* ========== CSS VARIABLES ========== */
+:root {
+  /* Colors - Tema Terang */
+  --primary: #CAE8BD; /* Medium green untuk elemen utama */
+  --secondary: #DDF6D2; /* Light green untuk elemen sekunder */
+  --accent: #FF8A65; /* Warm coral untuk highlights */
+  --bg-primary: #FFFFFF; /* Background putih bersih */
+  --bg-secondary: #F5F7FA; /* Background sekunder abu-abu terang */
+  --text-dark: #1A1A1A; /* Teks gelap */
+  --text-medium: #6B7280; /* Teks abu-abu medium */
+  
+  /* Shadows */
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  
+  /* Glass Effect */
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* WhatsApp */
+  --whatsapp-green: #25D366;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --primary: #4A6249;
+  --secondary: #3A4E3B;
+  --accent: #FF8A65;
+  --bg-primary: #1F1F1F; /* Background gelap */
+  --bg-secondary: #2D3748;
+  --text-dark: #F3F4F6;
+  --text-medium: #9CA3AF;
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== BODY STYLING ========== */
+body {
+  font-family: 'Inter', 'Montserrat', 'Poppins', sans-serif;
+  background: var(--bg-primary); /* Background putih bersih */
+  color: var(--text-dark);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* ========== APP CONTAINER ========== */
+.App {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg-primary); /* Background putih bersih */
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* Space untuk fixed header */
+.App::before {
+  content: '';
+  display: block;
+  height: 80px;
+}
+
+/* ========== SECTION CARD STYLING ========== */
+.section-card {
+  background: var(--bg-primary);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect untuk section card */
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Dark theme section card */
+[data-theme="dark"] .section-card {
+  background: var(--bg-primary);
+  border: 2px solid var(--primary);
+}
+
+/* ========== STRIPED BORDER VARIANT ========== */
+.section-card.striped-border {
+  border: 2px solid transparent;
+  background-image: linear-gradient(var(--bg-primary), var(--bg-primary)),
+                    linear-gradient(45deg, var(--primary) 50%, var(--secondary) 50%);
+  background-size: 100% 100%, 12px 12px;
+  background-clip: padding-box, border-box;
+}
+
+.section-card.striped-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+  z-index: -1;
+}
+
+/* ========== DIVIDER DEKORATIF ========== */
+.batik-divider {
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6 L10 0 L20 6 L30 0 L40 6 L40 12 L0 12 Z' fill='%23CAE8BD' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  margin: 40px 0;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Tablet */
+@media (max-width: 992px) {
+  .section-card {
+    padding: 30px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .App::before {
+    height: 70px;
+  }
+  .section-card {
+    padding: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+  .App::before {
+    height: 60px;
+  }
+  .section-card {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+}
